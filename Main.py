@@ -1,15 +1,14 @@
 from typing import List
 
 def insertionSort(array) -> List[int]:
-  for i in range(1,len(array)):
-      key = array[n]
-      num = n-1
-      while num >= 0 and key<array[num]:
-        num -= 1
-      array[num+1] = key
-  return array
+    for y in range(len(array)):
+       for x in range(1,len(array)):
+          j=x-1
+          while(array[x-1]>array[x] and j>=0):
+             array[x],array[x-1]=array[x-1],array[x]
+             j-=1
+    return array
 
-# data = [9, 5, 1, 4, 3]
 input_data = input()
 data = []
 for item in input_data.split(', '):
@@ -17,4 +16,4 @@ for item in input_data.split(', '):
     data.append(int(item))
   elif item.lstrip("-").isnumeric():
     data.append(int(item))
-print(insertionSort(data))
+print(insertionSort(data)
